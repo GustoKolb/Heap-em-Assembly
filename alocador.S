@@ -150,9 +150,11 @@ imprimeMapa:
     cmp %r15, %r14 #compara inicio com o fim da heap
     jae .done
 
+
+
 .print_header:
     lea header(%rip), %rsi   # passa o que printar como parametro
-    movq $HEADER_SIZE, %rdi      # passa o tamanho 
+    movq $1, %rdi      # passa o tamanho 
     call print
 
 .print_bytes:
@@ -181,7 +183,7 @@ imprimeMapa:
 
 .done:
     lea quebra_linha(%rip), %rsi
-    mov $1, %rdi
+    mov $2, %rdi
     call print
     popq %rbp
     ret
@@ -191,8 +193,10 @@ imprimeMapa:
 # ------------------------
 
 
-# void print(int vezes, char *caractere)
 
+
+
+# void print(int vezes, char *caractere)
 print:
     push %rbp
     mov %rsp, %rbp

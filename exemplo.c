@@ -4,9 +4,8 @@
 int main (long int argc, char** argv) {
   void *a, *b, *c, *d, *e, *f, *g, *h;
 
-  iniciaAlocador();               // Impressão esperada
-                                  //
-  imprimeMapa();                  // <vazio>
+  iniciaAlocador();              
+  imprimeMapa();                
 
   a = (void *) alocaMem(10);
   imprimeMapa();
@@ -26,22 +25,7 @@ int main (long int argc, char** argv) {
   imprimeMapa();
   g = (void *) alocaMem(60 + 73);
   imprimeMapa();
-  //g = (void *) alocaMem(96 + 47);
-  //imprimeMapa();
-  //liberaMem(f);
-  //imprimeMapa();
-  //h = (void *) alocaMem(96 + 46 + 24 + 28);
-  //imprimeMapa();
-  //liberaMem(g);
-  //imprimeMapa();
-  //liberaMem(h);
-  //imprimeMapa();
-  //h = (void *) alocaMem(96 + 46 + 24 + 28 + 24 + 96 + 48);
-  //imprimeMapa();
-  //liberaMem(h);
-  
   liberaMem(b);
-    
-
+  imprimeMapa();
   finalizaAlocador();
 }
